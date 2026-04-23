@@ -1,38 +1,137 @@
+:root {
+  --card-bg: #ffffff;
+  --card-radius: 14px;
+  --space-md: 20px;
+  --title-color: #0f172a;
+  --accent-color: #4f46e5;
+  --text-color: #334155;
+  --border-color: #e2e8f0;
+  --bg-color: #f8fafc;
+  --button-bg: #4f46e5;
+  --button-text: #ffffff;
+  --input-bg: #f1f5f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Georgia', serif;
+  padding: var(--space-md);
+}
+
+/* ===== APP WRAPPER ===== */
 .App {
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ===== TASK CARD (shared card style) ===== */
+.task-card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: var(--space-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.task-card h3 {
+  color: var(--title-color);
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+/* ===== HELLO WORLD ===== */
+h1 {
+  color: var(--title-color);
+  font-size: 1.8rem;
+  text-align: center;
+  padding: var(--space-md);
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== COUNTER ===== */
+.counter {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: var(--space-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.counter p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.counter button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.counter button:hover {
+  opacity: 0.85;
 }
 
-.App-link {
-  color: #61dafb;
+/* ===== FILTERED LIST ===== */
+.filtered-list {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: var(--space-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filtered-list input,
+.filtered-list select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.filtered-list input:focus,
+.filtered-list select:focus {
+  border-color: var(--accent-color);
+}
+
+/* ===== LIST ===== */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: var(--input-bg);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+  color: var(--title-color);
+  font-size: 0.95rem;
 }
